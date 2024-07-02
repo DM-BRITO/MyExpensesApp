@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Expenses.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbExpenses/dbExpenses.java" afterDir="false" />
+    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,12 +75,25 @@
       <workItem from="1719845849449" duration="3655000" />
       <workItem from="1719904209942" duration="1803000" />
       <workItem from="1719906897461" duration="1777000" />
-      <workItem from="1719908841028" duration="3968000" />
+      <workItem from="1719908841028" duration="4571000" />
     </task>
+    <task id="LOCAL-00001" summary="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
+      <option name="closed" value="true" />
+      <created>1719913362211</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719913362211</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql" />
+    <option name="LAST_COMMIT_MESSAGE" value="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
