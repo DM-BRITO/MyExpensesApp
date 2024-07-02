@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
+    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; &#10; Next up is the landing page">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbExpenses/dbExpenses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/dbExpenses.java" afterDir="false" />
     </list>
@@ -32,30 +33,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.dbExpenses.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/duart/Downloads/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/duart/IdeaProjects/Expenses/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.dbExpenses.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/duart/Downloads/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/duart/IdeaProjects/Expenses/src/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -86,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719913362211</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; &#10; Next up is the landing page">
+      <option name="closed" value="true" />
+      <created>1719919921083</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719919921084</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,7 +109,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql" />
-    <option name="LAST_COMMIT_MESSAGE" value="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql" />
+    <MESSAGE value="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; &#10; Next up is the landing page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; &#10; Next up is the landing page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -105,5 +121,9 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

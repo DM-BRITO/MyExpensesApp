@@ -98,7 +98,7 @@ public class dbExpenses extends JFrame {
 
     //Connect to the SQL database and check whether this user exists and if so verify the password match.
     private void login(String username, String password) {
-        String query = "SELECT * FROM users WHERE username = ?";
+        String query = "SELECT * FROM users WHERE users.username = ?";
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
              PreparedStatement pstmt = con.prepareStatement(query)) {
 
