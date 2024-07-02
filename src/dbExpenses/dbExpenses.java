@@ -10,9 +10,9 @@ import java.awt.*;
 
 public class dbExpenses extends JFrame {
 
-    //new layout v0.2
+    // Declare all JFrame assets required, assign them if possible
     Container container = getContentPane();
-    JLabel successfulOrFail  = new JLabel("");
+    JLabel successfulOrFail = new JLabel("");
     JLabel screenTitle = new JLabel("Welcome to My Expenses");
     JLabel userLabel = new JLabel("USERNAME");
     JLabel passwordLabel = new JLabel("PASSWORD");
@@ -22,19 +22,21 @@ public class dbExpenses extends JFrame {
     JButton resetButton = new JButton("RESET");
     JCheckBox showPassword = new JCheckBox("Show Password");
 
-
     public dbExpenses() {
 
-        //new ui
+        // Create fonts required for the login screen.
         Font loginResultFont = new Font("Serif", Font.BOLD, 20);
         Font titleFont = new Font("Serif", Font.BOLD, 22);
 
+        //Setting the fonts to the two JLabels which should be in serif
         screenTitle.setFont(titleFont);
         successfulOrFail.setFont(loginResultFont);
 
+        //Setting a background colour and layout using a container.
         getContentPane().setBackground(new java.awt.Color(213, 157, 93));
         container.setLayout(null);
 
+        //Managing where things appear on the screen
         screenTitle.setBounds(55, 100, 400, 30);
         userLabel.setBounds(50, 150, 100, 30);
         passwordLabel.setBounds(50, 220, 100, 30);
@@ -45,6 +47,7 @@ public class dbExpenses extends JFrame {
         resetButton.setBounds(200, 300, 100, 30);
         successfulOrFail.setBounds(125, 350, 200, 30);
 
+        //Add all onto the container
         container.add(screenTitle);
         container.add(userLabel);
         container.add(passwordLabel);
@@ -55,20 +58,19 @@ public class dbExpenses extends JFrame {
         container.add(resetButton);
         container.add(successfulOrFail);
 
-
+        //If the login or reset buttons are selected I want to run VerifyUserDetails
         logingin VerifyUserDetails = new logingin();
         loginButton.addActionListener(VerifyUserDetails);
         resetButton.addActionListener(VerifyUserDetails);
 
+        //Show password toggle
         showuserpassword sup = new showuserpassword();
         showPassword.addActionListener(sup);
-
-
     }
 
+    //Either show or hide the password depending on checkbox status
     public class showuserpassword implements ActionListener {
         public void actionPerformed(ActionEvent sup) {
-
             if (sup.getSource() == showPassword) {
                 if (showPassword.isSelected()) {
                     passwordField.setEchoChar((char) 0);
@@ -79,62 +81,51 @@ public class dbExpenses extends JFrame {
         }
     }
 
-
+    //Get the option the user selected and then either login or reset the fields, to login getText and run it into the login method.
     public class logingin implements ActionListener {
-
         public void actionPerformed(ActionEvent VerifyUserDetails) {
-
             String optionSelected = VerifyUserDetails.getActionCommand();
             if (optionSelected.equals("LOGIN")) {
-
-                String userAuthentication = "select * from users where username = '" + userTextField.getText() + "'";
-
-                //check the output for the user auth
-//                System.out.println(userAuthentication);
-
-                try {
-
-                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
-
-                    Statement stmt = con.createStatement();
-                    ResultSet rs = stmt.executeQuery(userAuthentication);
-
-                    if (!rs.next()) {
-                        successfulOrFail.setText("Login Failed");
-                    } else {
-                        String rt_username = rs.getString("username");
-                        String rt_password = rs.getString("password");
-
-
-                        if (rt_username.equals(userTextField.getText()) && rt_password.equals(passwordField.getText())) {
-                            successfulOrFail.setText("Login Successful");
-                        } else {
-                            successfulOrFail.setText("Login Failed");
-                        }
-                    }
-
-                    con.close();
-
-                } catch(SQLException ex){
-                    Logger.getLogger(dbExpenses.class.getName()).log(Level.SEVERE, null, ex);
-                    System.out.println(ex.getMessage());
-                }
-
-            }else {
-
+                login(userTextField.getText(), new String(passwordField.getPassword()));
+            } else {
                 userTextField.setText("");
                 passwordField.setText("");
                 showPassword.setSelected(false);
                 successfulOrFail.setText("");
             }
-
-
         }
     }
 
+    //Connect to the SQL database and check whether this user exists and if so verify the password match.
+    private void login(String username, String password) {
+        String query = "SELECT * FROM users WHERE username = ?";
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
+             PreparedStatement pstmt = con.prepareStatement(query)) {
+
+            pstmt.setString(1, username);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    String rt_username = rs.getString("username");
+                    String rt_password = rs.getString("password");
+                    if (rt_username.equals(username) && rt_password.equals(password)) {
+                        successfulOrFail.setText("Login Successful");
+                    } else {
+                        successfulOrFail.setText("Login Failed");
+                    }
+                } else {
+                    successfulOrFail.setText("Login Failed");
+                }
+            }
+            //If the database is not found display on the screen to signify database issue.
+        } catch (SQLException ex) {
+            Logger.getLogger(dbExpenses.class.getName()).log(Level.SEVERE, null, ex);
+            successfulOrFail.setText("Database error");
+        }
+    }
+
+
     public static void main(String[] args) {
-
-
+        //Main method to initialise the program.
         dbExpenses gui = new dbExpenses();
         gui.setTitle("My Expenses - Login");
         gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -143,25 +134,5 @@ public class dbExpenses extends JFrame {
         gui.setLocationRelativeTo(null);
         gui.setVisible(true);
 
-        dbExpenses db = new dbExpenses();
-        db.createConnection();
-
-    }
-
-
-    void createConnection() {
-        //declare variables for the connection to the database
-        String db_user = "root";
-        String db_password = "Legodudu16";
-
-        try {
-
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses",db_user , db_password);
-
-        } catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(dbExpenses.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println(ex.getMessage());
-        }
     }
 }
