@@ -115,15 +115,7 @@ public class dbLogin extends JFrame {
                     if (rt_username.equals(username) && rt_password.equals(password)) {
                         successfulOrFail.setText("Login Successful");
 
-                        HomeScreen hs = new HomeScreen();
-                        hs.setTitle("My Expenses - Home Page");
-                        hs.loggedInUsername.setText(rt_username);
-                        hs.getMemberSince.setText(rt_memberDate);
-                        hs.setVisible(true);
-                        hs.setLocationRelativeTo(null);
-                        hs.setSize(1200,600);
-                        hs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        hs.setResizable(false);
+                        ScreenUtils.openMainScreen(rt_username, rt_memberDate);
 
                         dispose();
 

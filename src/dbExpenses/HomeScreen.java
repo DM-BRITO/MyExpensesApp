@@ -144,15 +144,7 @@ public class HomeScreen extends JFrame {
 
     public static void main(String[] a) {
 
-        HomeScreen hs = new HomeScreen();
-        hs.setTitle("My Expenses - Home Page");
-        hs.setVisible(true);
-        hs.loggedInUsername.setText("Current user");
-        hs.getMemberSince.setText("2024");
-        hs.setLocationRelativeTo(null);
-        hs.setSize(1200,600);
-        hs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        hs.setResizable(false);
+        ScreenUtils.openMainScreenTEST();
 
     }
 }
