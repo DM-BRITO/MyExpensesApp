@@ -1,5 +1,7 @@
 package dbExpenses;
 
+import dbUtility.ScreenUtils;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
@@ -8,7 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.*;
 import java.awt.*;
 
-public class dbExpenses extends JFrame {
+public class dbLogin extends JFrame {
 
     // Declare all JFrame assets required, assign them if possible
     Container container = getContentPane();
@@ -22,7 +24,7 @@ public class dbExpenses extends JFrame {
     JButton resetButton = new JButton("RESET");
     JCheckBox showPassword = new JCheckBox("Show Password");
 
-    public dbExpenses() {
+    public dbLogin() {
 
         // Create fonts required for the login screen.
         Font loginResultFont = new Font("Serif", Font.BOLD, 20);
@@ -33,7 +35,8 @@ public class dbExpenses extends JFrame {
         successfulOrFail.setFont(loginResultFont);
 
         //Setting a background colour and layout using a container.
-        getContentPane().setBackground(new java.awt.Color(213, 157, 93));
+        getContentPane().setBackground(new java.awt.Color(227, 120, 127));
+        showPassword.setBackground(new java.awt.Color(227, 120, 127));
         container.setLayout(null);
 
         //Managing where things appear on the screen
@@ -98,7 +101,7 @@ public class dbExpenses extends JFrame {
 
     //Connect to the SQL database and check whether this user exists and if so verify the password match.
     private void login(String username, String password) {
-        String query = "SELECT * FROM users WHERE users.username = ?";
+        String query = "SELECT username, first_name, last_name, password, is_admin, register_date FROM users WHERE username = ?";
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
              PreparedStatement pstmt = con.prepareStatement(query)) {
 
@@ -107,8 +110,23 @@ public class dbExpenses extends JFrame {
                 if (rs.next()) {
                     String rt_username = rs.getString("username");
                     String rt_password = rs.getString("password");
+                    String rt_memberDate = rs.getString("register_date");
+
                     if (rt_username.equals(username) && rt_password.equals(password)) {
                         successfulOrFail.setText("Login Successful");
+
+                        HomeScreen hs = new HomeScreen();
+                        hs.setTitle("My Expenses - Home Page");
+                        hs.loggedInUsername.setText(rt_username);
+                        hs.getMemberSince.setText(rt_memberDate);
+                        hs.setVisible(true);
+                        hs.setLocationRelativeTo(null);
+                        hs.setSize(1200,600);
+                        hs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        hs.setResizable(false);
+
+                        dispose();
+
                     } else {
                         successfulOrFail.setText("Login Failed");
                     }
@@ -118,7 +136,7 @@ public class dbExpenses extends JFrame {
             }
             //If the database is not found display on the screen to signify database issue.
         } catch (SQLException ex) {
-            Logger.getLogger(dbExpenses.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(dbLogin.class.getName()).log(Level.SEVERE, null, ex);
             successfulOrFail.setText("Database error");
         }
     }
@@ -126,13 +144,8 @@ public class dbExpenses extends JFrame {
 
     public static void main(String[] args) {
         //Main method to initialise the program.
-        dbExpenses gui = new dbExpenses();
-        gui.setTitle("My Expenses - Login");
-        gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        gui.setBounds(10, 10, 370, 600);
-        gui.setResizable(false);
-        gui.setLocationRelativeTo(null);
-        gui.setVisible(true);
+
+        ScreenUtils.openLoginScreen();
 
     }
 }

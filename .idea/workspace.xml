@@ -4,15 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; &#10; Next up is the landing page">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; - Cleared all warnings and errors&#10; &#10; Next up is the landing page... \^-^/">
+      <change afterPath="$PROJECT_DIR$/src/dbExpenses/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dbExpenses/AddNewExpense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dbExpenses/ViewExpenses.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dbUtility/ScreenUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/366b4762-b621-4264-8410-953404e802cc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/366b4762-b621-4264-8410-953404e802cc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbExpenses/dbExpenses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/dbExpenses.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbExpenses/dbExpenses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/dbLogin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -23,6 +38,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -35,7 +53,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HomeScreen.executor": "Run",
     "Application.dbExpenses.executor": "Run",
+    "Application.dbLogin.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -84,6 +104,9 @@
       <workItem from="1719904209942" duration="1803000" />
       <workItem from="1719906897461" duration="1777000" />
       <workItem from="1719908841028" duration="4571000" />
+      <workItem from="1719990672823" duration="43000" />
+      <workItem from="1719990723265" duration="504000" />
+      <workItem from="1719991250622" duration="14946000" />
     </task>
     <task id="LOCAL-00001" summary="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
       <option name="closed" value="true" />
@@ -101,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719919921084</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; - Cleared all warnings and errors&#10; &#10; Next up is the landing page... \^-^/">
+      <option name="closed" value="true" />
+      <created>1719921104744</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719921104744</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,7 +141,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql" />
     <MESSAGE value="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; &#10; Next up is the landing page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; &#10; Next up is the landing page" />
+    <MESSAGE value="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; - Cleared all warnings and errors&#10; &#10; Next up is the landing page... \^-^/" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; - Cleared all warnings and errors&#10; &#10; Next up is the landing page... \^-^/" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
