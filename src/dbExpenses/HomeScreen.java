@@ -32,7 +32,7 @@ public class HomeScreen extends JFrame {
 
         setLayoutManager();
         setLocationsAndSize();
-        addComponentsToContainer();
+        buildHomeScreen();
 
         /* Create the home screen action lister for all interactions */
         HomeButtons hb = new HomeButtons(this);
@@ -70,12 +70,11 @@ public class HomeScreen extends JFrame {
 
         //Applying fonts and changing colours
         memberSince.setFont(topRightMemeberElementsFont);
-        memberSince.setForeground(Color.white);
-
         getMemberSince.setFont(topRightMemeberElementsFont);
-        getMemberSince.setForeground(Color.white);
-
         thisWeekSpent.setFont(thisweekspentFont);
+
+        memberSince.setForeground(Color.white);
+        getMemberSince.setForeground(Color.white);
         thisWeekSpent.setForeground(Color.white);
 
         //set bounds for the elements
@@ -94,7 +93,7 @@ public class HomeScreen extends JFrame {
 
     }
 
-    public void addComponentsToContainer(){
+    public void buildHomeScreen(){
 
         container.add(loggedInAs);
         container.add(loggedInUsername);
@@ -126,7 +125,8 @@ public class HomeScreen extends JFrame {
                 // then account, then the expenses view and finally adding an expense
 
                 if ("Create a Friend".equals(hb.getActionCommand())) {
-                    // Handle "Create a Friend" action
+                    ScreenUtils.openAddNewUser();
+                    homeScreen.dispose();
                 } else if ("Create Expenses".equals(hb.getActionCommand())) {
                     // Handle "Create Expenses" action
                 } else if ("View Expenses".equals(hb.getActionCommand())) {
@@ -141,7 +141,8 @@ public class HomeScreen extends JFrame {
             }
     }
 
-
+    //TODO: Test if I'm able to remove this main method as
+    // I dont require it any more, else can I just make it blank?
     public static void main(String[] a) {
 
         ScreenUtils.openMainScreenTEST();

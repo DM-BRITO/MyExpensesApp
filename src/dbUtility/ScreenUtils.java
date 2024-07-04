@@ -1,5 +1,6 @@
 package dbUtility;
 
+import dbExpenses.AddNewUser;
 import dbExpenses.HomeScreen;
 import dbExpenses.dbLogin;
 import javax.swing.JFrame;
@@ -16,6 +17,7 @@ public class ScreenUtils {
         gui.setVisible(true);
     }
 
+    //TODO: In future this can be removed :)
     public static void openMainScreenTEST() {
 
         HomeScreen hs = new HomeScreen();
@@ -41,6 +43,18 @@ public class ScreenUtils {
         hs.setSize(1200,600);
         hs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         hs.setResizable(false);
+
+    }
+
+    public static void openAddNewUser(){
+
+        AddNewUser adn = new AddNewUser();
+        adn.setTitle("My Expenses - Add New User");
+        adn.setLocationRelativeTo(null);
+        adn.setSize(1200,600);
+        adn.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        adn.setResizable(false);
+        adn.setVisible(true);
 
     }
 

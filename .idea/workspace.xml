@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error">
+    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbExpenses/dbLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/dbLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbUtility/ScreenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbUtility/ScreenUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AddNewUser.executor": "Run",
     "Application.HomeScreen.executor": "Run",
     "Application.dbExpenses.executor": "Run",
     "Application.dbLogin.executor": "Run",
@@ -53,6 +59,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/duart/Downloads/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0.jar",
     "node.js.detected.package.eslint": "true",
@@ -64,7 +71,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "settings.qodana",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -97,6 +104,9 @@
       <workItem from="1719990672823" duration="43000" />
       <workItem from="1719990723265" duration="504000" />
       <workItem from="1719991250622" duration="17248000" />
+      <workItem from="1720012336944" duration="6477000" />
+      <workItem from="1720078799774" duration="2807000" />
+      <workItem from="1720086106148" duration="5389000" />
     </task>
     <task id="LOCAL-00001" summary="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
       <option name="closed" value="true" />
@@ -138,7 +148,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720011535947</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful">
+      <option name="closed" value="true" />
+      <created>1720012402055</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720012402055</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful">
+      <option name="closed" value="true" />
+      <created>1720012414007</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720012414007</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,7 +176,8 @@
     <MESSAGE value="Login screen amended, heres the changes:&#10; -handled basic sql injection attacks&#10; - re-structured a bit to handle the connection better. &#10; - Also added execption for if the database is not reachable.&#10; - Removed debugging lines for the login screen.&#10; - Cleared all warnings and errors&#10; &#10; Next up is the landing page... \^-^/" />
     <MESSAGE value="Created the landing page!&#10;- All errors and bugs have been patched.&#10;- database management has imporved, at the point of logging we grab some variables for the home screen.&#10;- Reorganised the project again to minimise code duplication&#10;- Transactions table created&#10;- Only warnings are the empty ifs on the home screen buttons but as we add screens that will go away.&#10;- Also added a logout button.&#10;&#10; Next up is the Add a friend page. This whoop whoop :)" />
     <MESSAGE value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error" />
-    <option name="LAST_COMMIT_MESSAGE" value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error" />
+    <MESSAGE value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful" />
+    <option name="LAST_COMMIT_MESSAGE" value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

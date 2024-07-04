@@ -136,7 +136,6 @@ public class dbLogin extends JFrame {
 
     public static void main(String[] args) {
         //Main method to initialise the program.
-
         ScreenUtils.openLoginScreen();
 
     }
