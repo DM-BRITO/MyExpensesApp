@@ -129,7 +129,7 @@ public class HomeScreen extends JFrame {
                 // then account, then the expenses view and finally adding an expense
 
                 if ("Create a Friend".equals(hb.getActionCommand())) {
-                    ScreenUtils.openAddNewUser(loggedInUsername, getMemberSince);
+                    ScreenUtils.openAddNewUser(loggedInUsername, getMemberSince, homeScreen.rt_isAdmin);
                     homeScreen.dispose();
                 } else if ("Create Expenses".equals(hb.getActionCommand())) {
                     // Handle "Create Expenses" action
