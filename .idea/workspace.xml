@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Add a new user screen!&#10;&#10;- Added new user screen&#10;- optimised opening the new screen&#10;&#10;TODO:&#10;&#10;- Create a standard connection a new utility class for querying/inserting from/into the database.&#10;&#10;Next up will be adding the functionality to the new user screen to be able save into the database.">
-      <change afterPath="$PROJECT_DIR$/src/Notifications/Notification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/366b4762-b621-4264-8410-953404e802cc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/366b4762-b621-4264-8410-953404e802cc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="New User Screen 95% Complete!&#10;&#10;The new user screen is now complete, I've made alot of modifications to the layout of the code in this file but finally happy with where it is. It now logs when users create others as well as logging if it was successful or if it failed, that will help with any troubleshooting required.&#10;&#10;TODO:&#10;&#10;- Ensure that only users with admin permission can create admins.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" afterDir="false" />
@@ -120,7 +115,7 @@
       <workItem from="1720163261285" duration="12952000" />
       <workItem from="1720177232969" duration="1678000" />
       <workItem from="1720179349995" duration="889000" />
-      <workItem from="1720180255703" duration="360000" />
+      <workItem from="1720180255703" duration="1441000" />
     </task>
     <task id="LOCAL-00001" summary="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
       <option name="closed" value="true" />
@@ -186,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720093702115</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="New User Screen 95% Complete!&#10;&#10;The new user screen is now complete, I've made alot of modifications to the layout of the code in this file but finally happy with where it is. It now logs when users create others as well as logging if it was successful or if it failed, that will help with any troubleshooting required.&#10;&#10;TODO:&#10;&#10;- Ensure that only users with admin permission can create admins.">
+      <option name="closed" value="true" />
+      <created>1720181114048</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720181114048</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +203,8 @@
     <MESSAGE value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error" />
     <MESSAGE value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful" />
     <MESSAGE value="Add a new user screen!&#10;&#10;- Added new user screen&#10;- optimised opening the new screen&#10;&#10;TODO:&#10;&#10;- Create a standard connection a new utility class for querying/inserting from/into the database.&#10;&#10;Next up will be adding the functionality to the new user screen to be able save into the database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a new user screen!&#10;&#10;- Added new user screen&#10;- optimised opening the new screen&#10;&#10;TODO:&#10;&#10;- Create a standard connection a new utility class for querying/inserting from/into the database.&#10;&#10;Next up will be adding the functionality to the new user screen to be able save into the database." />
+    <MESSAGE value="New User Screen 95% Complete!&#10;&#10;The new user screen is now complete, I've made alot of modifications to the layout of the code in this file but finally happy with where it is. It now logs when users create others as well as logging if it was successful or if it failed, that will help with any troubleshooting required.&#10;&#10;TODO:&#10;&#10;- Ensure that only users with admin permission can create admins." />
+    <option name="LAST_COMMIT_MESSAGE" value="New User Screen 95% Complete!&#10;&#10;The new user screen is now complete, I've made alot of modifications to the layout of the code in this file but finally happy with where it is. It now logs when users create others as well as logging if it was successful or if it failed, that will help with any troubleshooting required.&#10;&#10;TODO:&#10;&#10;- Ensure that only users with admin permission can create admins." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

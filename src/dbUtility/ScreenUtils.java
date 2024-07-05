@@ -33,12 +33,13 @@ public class ScreenUtils {
 
     }
 
-    public static void openMainScreen(String rt_username, String rt_memberDate) {
+    public static void openMainScreen(String rt_username, String rt_memberDate, String rt_isAdmin) {
 
         HomeScreen hs = new HomeScreen();
         hs.setTitle("My Expenses - Home Page");
         hs.loggedInUsername.setText(rt_username);
         hs.getMemberSince.setText(rt_memberDate);
+        hs.rt_isAdmin = rt_isAdmin;
         hs.setVisible(true);
         hs.setLocationRelativeTo(null);
         hs.setSize(1200,600);
@@ -47,12 +48,13 @@ public class ScreenUtils {
 
     }
 
-    public static void openAddNewUser(JLabel loggedInUsername, JLabel getMemberSince){
+    public static void openAddNewUser(JLabel loggedInUsername, JLabel getMemberSince, String rt_isAdmin){
 
         AddNewUser adn = new AddNewUser();
         adn.setTitle("My Expenses - Add New User");
         adn.rt_username = loggedInUsername.getText();
         adn.rt_memberDate = getMemberSince.getText();
+        adn.rt_isAdmin = rt_isAdmin;
         adn.setLocationRelativeTo(null);
         adn.setSize(1200,600);
         adn.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

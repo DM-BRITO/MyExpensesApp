@@ -13,6 +13,8 @@ public class HomeScreen extends JFrame {
     JMenuBar menuBar;
     JMenuItem logout = new JMenuItem("Logout", SwingConstants.LEFT);
 
+    public String rt_isAdmin;
+
     //Declare labels
     public static JLabel loggedInUsername = new JLabel("", SwingConstants.RIGHT);
     JLabel loggedInAs = new JLabel("Currently logged in as", SwingConstants.RIGHT);

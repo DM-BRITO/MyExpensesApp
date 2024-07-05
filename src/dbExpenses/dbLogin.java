@@ -111,11 +111,12 @@ public class dbLogin extends JFrame {
                     String rt_username = rs.getString("username");
                     String rt_password = rs.getString("password");
                     String rt_memberDate = rs.getString("YEAR(register_date)").substring(0,4);
+                    String rt_isAdmin = rs.getString("is_admin");
 
                     if (rt_username.equals(username) && rt_password.equals(password)) {
                         successfulOrFail.setText("Login Successful");
 
-                        ScreenUtils.openMainScreen(rt_username, rt_memberDate);
+                        ScreenUtils.openMainScreen(rt_username, rt_memberDate, rt_isAdmin);
                         con.close();
                         dispose();
 

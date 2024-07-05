@@ -20,6 +20,7 @@ public class AddNewUser extends JFrame {
     //Declare username and member date which is required to load the Home screen correctly
     public static String rt_username;
     public static String rt_memberDate;
+    public static String rt_isAdmin;
     boolean insertQueryFailed = false;
 
     //Declare labels required
@@ -78,9 +79,7 @@ public class AddNewUser extends JFrame {
 
     public class BackButton implements ActionListener{
         public void actionPerformed(ActionEvent bck){
-
-            ScreenUtils.openMainScreen(rt_username, rt_memberDate);
-
+            ScreenUtils.openMainScreen(rt_username, rt_memberDate, rt_isAdmin);
             dispose();
         }
     }
