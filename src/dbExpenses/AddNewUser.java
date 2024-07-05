@@ -58,6 +58,9 @@ public class AddNewUser extends JFrame {
         CreateNewUserInDatabase createUser = new CreateNewUserInDatabase();
         createNewAccount.addActionListener(createUser);
 
+        ResetUserFields reset = new ResetUserFields();
+        clearFields.addActionListener(reset);
+
     }
 
     public void createMenu(){
@@ -193,7 +196,12 @@ public class AddNewUser extends JFrame {
                     pstmt.setString(2, passwordField.getText());
                     pstmt.setString(3, firstNameField.getText());
                     pstmt.setString(4, lastNameField.getText());
-                    pstmt.setBoolean(5, superUserCheckBox.isSelected());
+
+                    if (superUserCheckBox.isSelected() && rt_isAdmin.equals("1")){
+                        pstmt.setBoolean(5, true);
+                    }else {
+                        pstmt.setBoolean(5, false);
+                    }
 
                     pstmt.execute();
 
@@ -229,6 +237,16 @@ public class AddNewUser extends JFrame {
             }
 
             createNewAccount.setEnabled(true);
+        }
+    }
+
+    public class ResetUserFields implements ActionListener {
+        public void actionPerformed(ActionEvent reset) {
+            usernameField.setText("");
+            passwordField.setText("");
+            firstNameField.setText("");
+            lastNameField.setText("");
+            superUserCheckBox.setSelected(false);
         }
     }
 

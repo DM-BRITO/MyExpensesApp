@@ -24,8 +24,8 @@ public class ScreenUtils {
         HomeScreen hs = new HomeScreen();
         hs.setTitle("My Expenses - Home Page");
         hs.setVisible(true);
-        hs.loggedInUsername.setText("Current user");
-        hs.getMemberSince.setText("2024");
+        HomeScreen.loggedInUsername.setText("Current user");
+        HomeScreen.getMemberSince.setText("2024");
         hs.setLocationRelativeTo(null);
         hs.setSize(1200,600);
         hs.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,9 +37,9 @@ public class ScreenUtils {
 
         HomeScreen hs = new HomeScreen();
         hs.setTitle("My Expenses - Home Page");
-        hs.loggedInUsername.setText(rt_username);
-        hs.getMemberSince.setText(rt_memberDate);
-        hs.rt_isAdmin = rt_isAdmin;
+        HomeScreen.loggedInUsername.setText(rt_username);
+        HomeScreen.getMemberSince.setText(rt_memberDate);
+        HomeScreen.rt_isAdmin = rt_isAdmin;
         hs.setVisible(true);
         hs.setLocationRelativeTo(null);
         hs.setSize(1200,600);
@@ -52,9 +52,9 @@ public class ScreenUtils {
 
         AddNewUser adn = new AddNewUser();
         adn.setTitle("My Expenses - Add New User");
-        adn.rt_username = loggedInUsername.getText();
-        adn.rt_memberDate = getMemberSince.getText();
-        adn.rt_isAdmin = rt_isAdmin;
+        AddNewUser.rt_username = loggedInUsername.getText();
+        AddNewUser.rt_memberDate = getMemberSince.getText();
+        AddNewUser.rt_isAdmin = rt_isAdmin;
         adn.setLocationRelativeTo(null);
         adn.setSize(1200,600);
         adn.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

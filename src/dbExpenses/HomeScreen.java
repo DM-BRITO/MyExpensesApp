@@ -13,7 +13,7 @@ public class HomeScreen extends JFrame {
     JMenuBar menuBar;
     JMenuItem logout = new JMenuItem("Logout", SwingConstants.LEFT);
 
-    public String rt_isAdmin;
+    public static String rt_isAdmin;
 
     //Declare labels
     public static JLabel loggedInUsername = new JLabel("", SwingConstants.RIGHT);
@@ -129,7 +129,7 @@ public class HomeScreen extends JFrame {
                 // then account, then the expenses view and finally adding an expense
 
                 if ("Create a Friend".equals(hb.getActionCommand())) {
-                    ScreenUtils.openAddNewUser(loggedInUsername, getMemberSince, homeScreen.rt_isAdmin);
+                    ScreenUtils.openAddNewUser(loggedInUsername, getMemberSince, rt_isAdmin);
                     homeScreen.dispose();
                 } else if ("Create Expenses".equals(hb.getActionCommand())) {
                     // Handle "Create Expenses" action
