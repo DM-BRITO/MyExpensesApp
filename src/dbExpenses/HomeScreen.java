@@ -14,12 +14,12 @@ public class HomeScreen extends JFrame {
     JMenuItem logout = new JMenuItem("Logout", SwingConstants.LEFT);
 
     //Declare labels
-    public JLabel loggedInUsername = new JLabel("", SwingConstants.RIGHT);
+    public static JLabel loggedInUsername = new JLabel("", SwingConstants.RIGHT);
     JLabel loggedInAs = new JLabel("Currently logged in as", SwingConstants.RIGHT);
     JLabel welcomeLabel = new JLabel("Welcome to Your Expenses", SwingConstants.LEFT);
     JLabel thisWeekSpent = new JLabel("This week you've spent £", SwingConstants.LEFT);
     JLabel memberSince = new JLabel("Member Since", SwingConstants.RIGHT);
-    public JLabel getMemberSince = new JLabel("", SwingConstants.RIGHT);
+    public static JLabel getMemberSince = new JLabel("", SwingConstants.RIGHT);
 
     //Declare buttons and containers
     Container container = getContentPane();
@@ -27,6 +27,7 @@ public class HomeScreen extends JFrame {
     JButton createExpenses = new JButton("Create Expenses");
     JButton viewExpenses = new JButton("View Expenses");
     JButton account = new JButton("Account");
+
 
     public HomeScreen() {
 
@@ -42,11 +43,6 @@ public class HomeScreen extends JFrame {
         account.addActionListener(hb);
         logout.addActionListener(hb);
 
-    }
-
-    public void setLayoutManager(){
-        container.setLayout(null);
-        container.setBackground(new java.awt.Color(227, 120, 127));
     }
 
     public void setLocationsAndSize(){
@@ -93,6 +89,12 @@ public class HomeScreen extends JFrame {
 
     }
 
+    public void setLayoutManager(){
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(227, 120, 127));
+    }
+
+
     public void buildHomeScreen(){
 
         container.add(loggedInAs);
@@ -125,7 +127,7 @@ public class HomeScreen extends JFrame {
                 // then account, then the expenses view and finally adding an expense
 
                 if ("Create a Friend".equals(hb.getActionCommand())) {
-                    ScreenUtils.openAddNewUser();
+                    ScreenUtils.openAddNewUser(loggedInUsername, getMemberSince);
                     homeScreen.dispose();
                 } else if ("Create Expenses".equals(hb.getActionCommand())) {
                     // Handle "Create Expenses" action
@@ -143,7 +145,7 @@ public class HomeScreen extends JFrame {
 
     //TODO: Test if I'm able to remove this main method as
     // I dont require it any more, else can I just make it blank?
-    public static void main(String[] a) {
+    public static void main() {
 
         ScreenUtils.openMainScreenTEST();
 

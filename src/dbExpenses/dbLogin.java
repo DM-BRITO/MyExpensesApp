@@ -101,7 +101,7 @@ public class dbLogin extends JFrame {
 
     //Connect to the SQL database and check whether this user exists and if so verify the password match.
     private void login(String username, String password) {
-        String query = "SELECT username, first_name, last_name, password, is_admin, register_date FROM users WHERE username = ?";
+        String query = "SELECT username, first_name, last_name, password, is_admin, YEAR(register_date) FROM users WHERE username = ?";
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
              PreparedStatement pstmt = con.prepareStatement(query)) {
 
@@ -110,20 +110,22 @@ public class dbLogin extends JFrame {
                 if (rs.next()) {
                     String rt_username = rs.getString("username");
                     String rt_password = rs.getString("password");
-                    String rt_memberDate = rs.getString("register_date");
+                    String rt_memberDate = rs.getString("YEAR(register_date)").substring(0,4);
 
                     if (rt_username.equals(username) && rt_password.equals(password)) {
                         successfulOrFail.setText("Login Successful");
 
                         ScreenUtils.openMainScreen(rt_username, rt_memberDate);
-
+                        con.close();
                         dispose();
 
                     } else {
                         successfulOrFail.setText("Login Failed");
+                        con.close();
                     }
                 } else {
                     successfulOrFail.setText("Login Failed");
+                    con.close();
                 }
             }
             //If the database is not found display on the screen to signify database issue.
@@ -131,10 +133,11 @@ public class dbLogin extends JFrame {
             Logger.getLogger(dbLogin.class.getName()).log(Level.SEVERE, null, ex);
             successfulOrFail.setText("Database error");
         }
+
     }
 
 
-    public static void main(String[] args) {
+    public static void main() {
         //Main method to initialise the program.
         ScreenUtils.openLoginScreen();
 

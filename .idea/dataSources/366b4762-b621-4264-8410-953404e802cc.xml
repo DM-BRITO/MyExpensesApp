@@ -5,9 +5,8 @@
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>|root||admin||ALTER|G
+      <Grants>|root||root|localhost|ALLOW_NONEXISTENT_DEFINER|G
 |root||root|localhost|ALTER|G
-|root||admin||ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
 |root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
 |root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
@@ -25,86 +24,62 @@
 |root||root|localhost|CLONE_ADMIN|G
 |root||mysql.session|localhost|CONNECTION_ADMIN|G
 |root||root|localhost|CONNECTION_ADMIN|G
-|root||admin||CREATE|G
 |root||root|localhost|CREATE|G
-|root||admin||CREATE ROLE|G
 |root||root|localhost|CREATE ROLE|G
-|root||admin||CREATE ROUTINE|G
 |root||root|localhost|CREATE ROUTINE|G
-|root||admin||CREATE TABLESPACE|G
 |root||root|localhost|CREATE TABLESPACE|G
-|root||admin||CREATE TEMPORARY TABLES|G
 |root||root|localhost|CREATE TEMPORARY TABLES|G
-|root||admin||CREATE USER|G
 |root||root|localhost|CREATE USER|G
-|root||admin||CREATE VIEW|G
 |root||root|localhost|CREATE VIEW|G
-|root||admin||DELETE|G
 |root||root|localhost|DELETE|G
-|root||admin||DROP|G
 |root||root|localhost|DROP|G
-|root||admin||DROP ROLE|G
 |root||root|localhost|DROP ROLE|G
 |root||root|localhost|ENCRYPTION_KEY_ADMIN|G
-|root||admin||EVENT|G
 |root||root|localhost|EVENT|G
-|root||admin||EXECUTE|G
 |root||root|localhost|EXECUTE|G
-|root||admin||FILE|G
 |root||root|localhost|FILE|G
 |root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
 |root||mysql.session|localhost|FIREWALL_EXEMPT|G
 |root||mysql.sys|localhost|FIREWALL_EXEMPT|G
 |root||root|localhost|FIREWALL_EXEMPT|G
 |root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
+|root||root|localhost|FLUSH_PRIVILEGES|G
 |root||root|localhost|FLUSH_STATUS|G
 |root||root|localhost|FLUSH_TABLES|G
 |root||root|localhost|FLUSH_USER_RESOURCES|G
 |root||root|localhost|GROUP_REPLICATION_ADMIN|G
 |root||root|localhost|GROUP_REPLICATION_STREAM|G
-|root||admin||INDEX|G
 |root||root|localhost|INDEX|G
 |root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
 |root||root|localhost|INNODB_REDO_LOG_ENABLE|G
-|root||admin||INSERT|G
 |root||root|localhost|INSERT|G
-|root||admin||LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
+|root||root|localhost|OPTIMIZE_LOCAL_TABLE|G
 |root||root|localhost|PASSWORDLESS_USER_ADMIN|G
 |root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
-|root||admin||PROCESS|G
 |root||root|localhost|PROCESS|G
-|root||admin||REFERENCES|G
 |root||root|localhost|REFERENCES|G
-|root||admin||RELOAD|G
 |root||root|localhost|RELOAD|G
-|root||admin||REPLICATION CLIENT|G
 |root||root|localhost|REPLICATION CLIENT|G
-|root||admin||REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION_APPLIER|G
 |root||root|localhost|REPLICATION_SLAVE_ADMIN|G
 |root||root|localhost|RESOURCE_GROUP_ADMIN|G
 |root||root|localhost|RESOURCE_GROUP_USER|G
 |root||root|localhost|ROLE_ADMIN|G
-|root||admin||SELECT|G
 |root||mysql.infoschema|localhost|SELECT|G
 |root||root|localhost|SELECT|G
 |root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
-|root||root|localhost|SET_USER_ID|G
-|root||admin||SHOW DATABASES|G
+|root||root|localhost|SET_ANY_DEFINER|G
 |root||root|localhost|SHOW DATABASES|G
-|root||admin||SHOW VIEW|G
 |root||root|localhost|SHOW VIEW|G
 |root||root|localhost|SHOW_ROUTINE|G
-|root||admin||SHUTDOWN|G
 |root||mysql.session|localhost|SHUTDOWN|G
 |root||root|localhost|SHUTDOWN|G
-|root||admin||SUPER|G
 |root||mysql.session|localhost|SUPER|G
 |root||root|localhost|SUPER|G
 |root||mysql.infoschema|localhost|SYSTEM_USER|G
@@ -115,16 +90,14 @@
 |root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
 |root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
 |root||root|localhost|TELEMETRY_LOG_ADMIN|G
-|root||admin||TRIGGER|G
+|root||root|localhost|TRANSACTION_GTID_TAG|G
 |root||root|localhost|TRIGGER|G
-|root||admin||UPDATE|G
 |root||root|localhost|UPDATE|G
 |root||root|localhost|XA_RECOVER_ADMIN|G
-|root||admin||grant option|G
 |root||root|localhost|grant option|G
 performance_schema|schema||mysql.session|localhost|SELECT|G
 sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
-      <ServerVersion>8.0.38</ServerVersion>
+      <ServerVersion>9.0.0</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
@@ -1039,133 +1012,172 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="292" parent="1" name="expenses">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-07-03.12:45:33</LastIntrospectionLocalTimestamp>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <LastIntrospectionLocalTimestamp>2024-07-05.11:02:56</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <user id="293" parent="1" name="admin">
-      <Plugin>caching_sha2_password</Plugin>
-    </user>
-    <user id="294" parent="1" name="mysql.infoschema">
+    <user id="293" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="295" parent="1" name="mysql.session">
+    <user id="294" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="296" parent="1" name="mysql.sys">
+    <user id="295" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="297" parent="1" name="root">
+    <user id="296" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="298" parent="292" name="transactions">
+    <table id="297" parent="292" name="transactions">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </table>
+    <table id="298" parent="292" name="user_activity">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
     <table id="299" parent="292" name="users">
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+      <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <column id="300" parent="298" name="tran_id">
-      <AutoIncrement>2</AutoIncrement>
+    <column id="300" parent="297" name="tran_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="301" parent="298" name="tran_ref">
-      <DasType>varchar(50)|0s</DasType>
+    <column id="301" parent="297" name="tran_ref">
+      <DasType>varchar(45)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="302" parent="298" name="username">
-      <DasType>varchar(50)|0s</DasType>
+    <column id="302" parent="297" name="username">
+      <DasType>varchar(25)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="303" parent="298" name="location">
-      <DasType>varchar(50)|0s</DasType>
+    <column id="303" parent="297" name="location">
+      <DasType>varchar(45)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="304" parent="298" name="amount_paid">
+    <column id="304" parent="297" name="amount_paid">
       <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="305" parent="298" name="tran_date">
+    <column id="305" parent="297" name="tran_date">
       <DasType>datetime|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <foreign-key id="306" parent="298" name="transactions_ibfk_1">
+    <foreign-key id="306" parent="297" name="fk_transactions_users">
       <ColNames>username</ColNames>
       <RefColNames>username</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="307" parent="298" name="PRIMARY">
+    <index id="307" parent="297" name="PRIMARY">
       <ColNames>tran_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="308" parent="298" name="username">
+    <index id="308" parent="297" name="fk_transactions_users_idx">
       <ColNames>username</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="309" parent="298" name="PRIMARY">
+    <key id="309" parent="297" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="310" parent="299" name="id">
-      <AutoIncrement>3</AutoIncrement>
+    <column id="310" parent="298" name="act_id">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="311" parent="299" name="username">
+    <column id="311" parent="298" name="username">
       <DasType>varchar(25)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="312" parent="299" name="first_name">
-      <DasType>varchar(25)|0s</DasType>
+    <column id="312" parent="298" name="actcod">
+      <DasType>varchar(5)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="313" parent="299" name="last_name">
-      <DasType>varchar(25)|0s</DasType>
+    <column id="313" parent="298" name="value_effected">
+      <DasType>varchar(45)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="314" parent="299" name="password">
-      <DasType>varchar(25)|0s</DasType>
+    <column id="314" parent="298" name="act_date">
+      <DasType>datetime|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="315" parent="299" name="is_admin">
-      <DasType>tinyint(1)|0s</DasType>
-      <Position>6</Position>
-    </column>
-    <column id="316" parent="299" name="register_date">
-      <DasType>date|0s</DasType>
-      <Position>7</Position>
-    </column>
-    <index id="317" parent="299" name="PRIMARY">
-      <ColNames>id
-username</ColNames>
+    <index id="315" parent="298" name="PRIMARY">
+      <ColNames>act_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="318" parent="299" name="username">
-      <ColNames>username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="319" parent="299" name="PRIMARY">
+    <key id="316" parent="298" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="320" parent="299" name="username">
-      <UnderlyingIndexName>username</UnderlyingIndexName>
+    <column id="317" parent="299" name="id">
+      <AutoIncrement>10</AutoIncrement>
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="318" parent="299" name="username">
+      <DasType>varchar(25)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="319" parent="299" name="password">
+      <DasType>varchar(25)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="320" parent="299" name="first_name">
+      <DasType>varchar(25)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="321" parent="299" name="last_name">
+      <DasType>varchar(25)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="322" parent="299" name="is_admin">
+      <DasType>varchar(45)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="323" parent="299" name="register_date">
+      <DasType>datetime|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <index id="324" parent="299" name="id_UNIQUE">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="325" parent="299" name="PRIMARY">
+      <ColNames>username</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="326" parent="299" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="327" parent="299" name="id_UNIQUE">
+      <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

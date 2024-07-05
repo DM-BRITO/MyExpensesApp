@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful">
+    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="Add a new user screen!&#10;&#10;- Added new user screen&#10;- optimised opening the new screen&#10;&#10;TODO:&#10;&#10;- Create a standard connection a new utility class for querying/inserting from/into the database.&#10;&#10;Next up will be adding the functionality to the new user screen to be able save into the database.">
+      <change afterPath="$PROJECT_DIR$/src/Notifications/Notification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/366b4762-b621-4264-8410-953404e802cc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/366b4762-b621-4264-8410-953404e802cc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" afterDir="false" />
@@ -46,40 +50,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AddNewUser.executor": "Run",
-    "Application.HomeScreen.executor": "Run",
-    "Application.dbExpenses.executor": "Run",
-    "Application.dbLogin.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/duart/Downloads/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/duart/IdeaProjects/Expenses/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AddNewUser.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ErrorNotification.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HomeScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Application.dbExpenses.executor&quot;: &quot;Run&quot;,
+    &quot;Application.dbLogin.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/duart/Downloads/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0/mysql-connector-j-9.0.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/duart/IdeaProjects/Expenses/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\duart\IdeaProjects\Expenses\src\resources\fonts" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -106,7 +116,11 @@
       <workItem from="1719991250622" duration="17248000" />
       <workItem from="1720012336944" duration="6477000" />
       <workItem from="1720078799774" duration="2807000" />
-      <workItem from="1720086106148" duration="5389000" />
+      <workItem from="1720086106148" duration="10402000" />
+      <workItem from="1720163261285" duration="12952000" />
+      <workItem from="1720177232969" duration="1678000" />
+      <workItem from="1720179349995" duration="889000" />
+      <workItem from="1720180255703" duration="360000" />
     </task>
     <task id="LOCAL-00001" summary="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
       <option name="closed" value="true" />
@@ -164,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720012414007</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add a new user screen!&#10;&#10;- Added new user screen&#10;- optimised opening the new screen&#10;&#10;TODO:&#10;&#10;- Create a standard connection a new utility class for querying/inserting from/into the database.&#10;&#10;Next up will be adding the functionality to the new user screen to be able save into the database.">
+      <option name="closed" value="true" />
+      <created>1720093702115</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720093702115</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +199,8 @@
     <MESSAGE value="Created the landing page!&#10;- All errors and bugs have been patched.&#10;- database management has imporved, at the point of logging we grab some variables for the home screen.&#10;- Reorganised the project again to minimise code duplication&#10;- Transactions table created&#10;- Only warnings are the empty ifs on the home screen buttons but as we add screens that will go away.&#10;- Also added a logout button.&#10;&#10; Next up is the Add a friend page. This whoop whoop :)" />
     <MESSAGE value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error" />
     <MESSAGE value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful" />
-    <option name="LAST_COMMIT_MESSAGE" value="Utilisation to the MAX&#10;- Added the home screen to the ScreenUtils class.&#10;- Restarting to clear some ghost error - Successful" />
+    <MESSAGE value="Add a new user screen!&#10;&#10;- Added new user screen&#10;- optimised opening the new screen&#10;&#10;TODO:&#10;&#10;- Create a standard connection a new utility class for querying/inserting from/into the database.&#10;&#10;Next up will be adding the functionality to the new user screen to be able save into the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a new user screen!&#10;&#10;- Added new user screen&#10;- optimised opening the new screen&#10;&#10;TODO:&#10;&#10;- Create a standard connection a new utility class for querying/inserting from/into the database.&#10;&#10;Next up will be adding the functionality to the new user screen to be able save into the database." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -185,6 +208,10 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.sql.SQLException" package="java.sql" />
           <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.sql.SQLIntegrityConstraintViolationException" package="java.sql" />
+          <option name="timeStamp" value="2" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

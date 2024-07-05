@@ -3,7 +3,8 @@ package dbUtility;
 import dbExpenses.AddNewUser;
 import dbExpenses.HomeScreen;
 import dbExpenses.dbLogin;
-import javax.swing.JFrame;
+
+import javax.swing.*;
 
 public class ScreenUtils {
 
@@ -46,10 +47,12 @@ public class ScreenUtils {
 
     }
 
-    public static void openAddNewUser(){
+    public static void openAddNewUser(JLabel loggedInUsername, JLabel getMemberSince){
 
         AddNewUser adn = new AddNewUser();
         adn.setTitle("My Expenses - Add New User");
+        adn.rt_username = loggedInUsername.getText();
+        adn.rt_memberDate = getMemberSince.getText();
         adn.setLocationRelativeTo(null);
         adn.setSize(1200,600);
         adn.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

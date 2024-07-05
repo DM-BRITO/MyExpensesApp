@@ -1,6 +1,7 @@
 package dbExpenses;
 
 import dbUtility.ScreenUtils;
+import Notifications.Notification;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,9 +9,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.sql.*;
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AddNewUser extends JFrame {
+
+    //Declare username and member date which is required to load the Home screen correctly
+    public static String rt_username;
+    public static String rt_memberDate;
+    boolean insertQueryFailed = false;
 
     //Declare labels required
     JLabel addAFriendLabel = new JLabel("Add a Friend!", SwingConstants.CENTER);
@@ -28,6 +38,7 @@ public class AddNewUser extends JFrame {
     JTextField lastNameField = new JTextField(25);
     JCheckBox superUserCheckBox = new JCheckBox("Super User!");
     JButton createNewAccount = new JButton("Create Account");
+    JButton clearFields = new JButton("Reset");
 
     //Declare any global variables
     Font TitleFont;
@@ -35,6 +46,7 @@ public class AddNewUser extends JFrame {
 
     public AddNewUser(){
 
+        createMenu();
         setLayoutManager();
         createFonts();
         applyLabelFormatting();
@@ -47,13 +59,29 @@ public class AddNewUser extends JFrame {
 
     }
 
-    public static class CreateNewUserInDatabase implements ActionListener {
-        public void actionPerformed(ActionEvent createUser) {
-            //TODO: standardize the database connection and then implement it here.
-            // Also this button must not be spam-able,
-            // e.g. press it for a second then it blocks for a half a second.
+    public void createMenu(){
 
-            System.out.println("Create New User");
+        //Create the menu which allows the user to go back onto the login screen.
+        // This menu will now create dependencies with the login process WARNING.
+
+        JMenuBar menubar = new JMenuBar();
+        add(menubar);
+
+        JMenuItem back = new JMenuItem("Back To Main Menu");
+        menubar.add(back);
+
+        setJMenuBar(menubar);
+
+        BackButton bck = new BackButton();
+        back.addActionListener(bck);
+    }
+
+    public class BackButton implements ActionListener{
+        public void actionPerformed(ActionEvent bck){
+
+            ScreenUtils.openMainScreen(rt_username, rt_memberDate);
+
+            dispose();
         }
     }
 
@@ -85,6 +113,7 @@ public class AddNewUser extends JFrame {
 
 
         createNewAccount.setBounds(480, 300, 170, 30);
+        clearFields.setBounds(480, 340, 170, 30);
     }
 
     public void applyLabelFormatting(){
@@ -136,11 +165,77 @@ public class AddNewUser extends JFrame {
 
         container.add(superUserCheckBox);
         container.add(createNewAccount);
+        container.add(clearFields);
     }
 
-    public static void main(String[] args) {
+    public class CreateNewUserInDatabase implements ActionListener {
+        public void actionPerformed(ActionEvent createUser) {
 
-       ScreenUtils.openAddNewUser();
+            //Disable the button for the duration of this script
+            createNewAccount.setEnabled(false);
+
+            //Debug line
+//            System.out.println("Create New User");
+
+            //Check all required fields have been inputted.
+            if (Objects.equals(usernameField.getText(), "") || Objects.equals(passwordField.getText(), "") || Objects.equals(firstNameField.getText(), "") || Objects.equals(lastNameField.getText(), "")) {
+                Notification.ErrorNotificationBadData();
+            }else{
+
+                //Declare both queries, one which will insert into the users table and the other will insert into user activity
+                String insertIntoUsers = "INSERT INTO users(username, password,first_name, last_name, is_admin, register_date) VALUES (?,?,?,?,?, SYSDATE())";
+                String insertIntoActivity = "INSERT INTO user_activity(username, actcod, value_effected, status, act_date) VALUES(?,'USRCR', ?, ?, SYSDATE())";
+
+                try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
+                     PreparedStatement pstmt = con.prepareStatement(insertIntoUsers))
+                {
+
+                    pstmt.setString(1, usernameField.getText());
+                    pstmt.setString(2, passwordField.getText());
+                    pstmt.setString(3, firstNameField.getText());
+                    pstmt.setString(4, lastNameField.getText());
+                    pstmt.setBoolean(5, superUserCheckBox.isSelected());
+
+                    pstmt.execute();
+
+                   Notification.SuccessfulNotificationUserCreated();
+                    //If the database is not found display on the screen to signify database issue.
+                } catch (SQLException ex) {
+                    Logger.getLogger(dbLogin.class.getName()).log(Level.SEVERE, null, ex);
+                    Notification.ErrorNotificationBadData();
+                    insertQueryFailed = true;
+                }
+
+                try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
+                     PreparedStatement pstmt = con.prepareStatement(insertIntoActivity))
+                {
+
+                    pstmt.setString(1, rt_username);
+                    pstmt.setString(2, usernameField.getText());
+
+                    if (insertQueryFailed){
+                        pstmt.setString(3, "FAIL");
+                    }else {
+                        pstmt.setString(3, "SUCCESS");
+                    }
+
+                    pstmt.execute();
+
+                    //If the database is not found display on the screen to signify database issue.
+                } catch (SQLException ex) {
+                    Logger.getLogger(dbLogin.class.getName()).log(Level.SEVERE, null, ex);
+                    Notification.ErrorNotificationBadData();
+                }
+
+            }
+
+            createNewAccount.setEnabled(true);
+        }
+    }
+
+    public static void main() {
+
+
 
     }
 }
