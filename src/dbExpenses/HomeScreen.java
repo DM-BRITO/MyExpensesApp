@@ -132,7 +132,8 @@ public class HomeScreen extends JFrame {
                     ScreenUtils.openAddNewUser(loggedInUsername, getMemberSince, rt_isAdmin);
                     homeScreen.dispose();
                 } else if ("Create Expenses".equals(hb.getActionCommand())) {
-                    // Handle "Create Expenses" action
+                    ScreenUtils.openCreateNewExpense(loggedInUsername, getMemberSince, rt_isAdmin);
+                    homeScreen.dispose();
                 } else if ("View Expenses".equals(hb.getActionCommand())) {
                     // Handle "View Expenses" action
                 } else if ("Account".equals(hb.getActionCommand())) {
@@ -147,6 +148,7 @@ public class HomeScreen extends JFrame {
 
     //TODO: Test if I'm able to remove this main method as
     // I dont require it any more, else can I just make it blank?
+    // yes its removable but wait till the end as currently good for testing.
     public static void main() {
 
         ScreenUtils.openMainScreenTEST();

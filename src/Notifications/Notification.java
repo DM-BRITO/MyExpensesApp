@@ -12,4 +12,8 @@ public class Notification {
         JOptionPane.showMessageDialog(null, "Success - User Created", "New User Created", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    public static void SuccessfulNotificationExpenseCreated(){
+        JOptionPane.showMessageDialog(null,"Sucess - Expense Created", "New Expense Created", JOptionPane.INFORMATION_MESSAGE);
+    }
+
 }

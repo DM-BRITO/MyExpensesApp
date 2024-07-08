@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)&#10;- reset button complete as was missed&#10;&#10;Next up!&#10;- Add new expense screen">
+    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)&#10;- Reset button complete as was missed&#10;- Simplified some if statements&#10;&#10;Next up!&#10;- Add new expense screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/AddNewUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbExpenses/AddNewExpense.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/AddNewExpense.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbUtility/ScreenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbUtility/ScreenUtils.java" afterDir="false" />
     </list>
@@ -46,6 +46,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.AddNewExpense.executor&quot;: &quot;Run&quot;,
     &quot;Application.AddNewUser.executor&quot;: &quot;Run&quot;,
     &quot;Application.ErrorNotification.executor&quot;: &quot;Run&quot;,
     &quot;Application.HomeScreen.executor&quot;: &quot;Run&quot;,
@@ -76,11 +77,16 @@
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
       &quot;mysql&quot;
+    ],
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
     ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\duart\IdeaProjects\Expenses\src\Flatline" />
+      <recent name="C:\Users\duart\IdeaProjects\Expenses\src\sierra" />
       <recent name="C:\Users\duart\IdeaProjects\Expenses\src\resources\fonts" />
     </key>
   </component>
@@ -114,7 +120,13 @@
       <workItem from="1720163261285" duration="12952000" />
       <workItem from="1720177232969" duration="1678000" />
       <workItem from="1720179349995" duration="889000" />
-      <workItem from="1720180255703" duration="2281000" />
+      <workItem from="1720180255703" duration="7274000" />
+      <workItem from="1720420998989" duration="7276000" />
+      <workItem from="1720440395982" duration="72000" />
+      <workItem from="1720441273797" duration="192000" />
+      <workItem from="1720442087907" duration="51000" />
+      <workItem from="1720442312514" duration="1391000" />
+      <workItem from="1720443767671" duration="2898000" />
     </task>
     <task id="LOCAL-00001" summary="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
       <option name="closed" value="true" />
@@ -204,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720181942625</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)&#10;- Reset button complete as was missed&#10;- Simplified some if statements&#10;&#10;Next up!&#10;- Add new expense screen">
+      <option name="closed" value="true" />
+      <created>1720183103978</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1720183103978</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +242,8 @@
     <MESSAGE value="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin" />
     <MESSAGE value="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)" />
     <MESSAGE value="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)&#10;- reset button complete as was missed&#10;&#10;Next up!&#10;- Add new expense screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)&#10;- reset button complete as was missed&#10;&#10;Next up!&#10;- Add new expense screen" />
+    <MESSAGE value="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)&#10;- Reset button complete as was missed&#10;- Simplified some if statements&#10;&#10;Next up!&#10;- Add new expense screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)&#10;- Reset button complete as was missed&#10;- Simplified some if statements&#10;&#10;Next up!&#10;- Add new expense screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
