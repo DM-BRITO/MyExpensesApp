@@ -13,7 +13,15 @@ public class Notification {
     }
 
     public static void SuccessfulNotificationExpenseCreated(){
-        JOptionPane.showMessageDialog(null,"Sucess - Expense Created", "New Expense Created", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Success - Expense Created", "New Expense Created", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public static void DataBaseNotificationUnexpectedDownTime(){
+        JOptionPane.showMessageDialog(null,"Failed - Database out of reach, please ensure that it's running", "Database is Not Reachable", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public static void DataBaseNotificationNoRecordsFound(){
+        JOptionPane.showMessageDialog(null,"Failed - There is no data to display here", "No Data Found", JOptionPane.ERROR_MESSAGE);
     }
 
 }

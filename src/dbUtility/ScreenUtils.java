@@ -1,9 +1,6 @@
 package dbUtility;
 
-import dbExpenses.AddNewExpense;
-import dbExpenses.AddNewUser;
-import dbExpenses.HomeScreen;
-import dbExpenses.dbLogin;
+import dbExpenses.*;
 
 import javax.swing.*;
 
@@ -76,6 +73,21 @@ public class ScreenUtils {
         ane.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ane.setResizable(false);
         ane.setVisible(true);
+
+    }
+
+    public static void viewExpenses(JLabel loggedInUsername, JLabel getMemberSince, String rt_isAdmin){
+
+        ViewExpenses ve = new ViewExpenses();
+        ve.setTitle("My Expenses - Create New Expense");
+        ViewExpenses.rt_username = loggedInUsername.getText();
+        ViewExpenses.rt_memberDate = getMemberSince.getText();
+        ViewExpenses.rt_isAdmin = rt_isAdmin;
+        ve.setLocationRelativeTo(null);
+        ve.setSize(1200,600);
+        ve.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ve.setResizable(false);
+        ve.setVisible(true);
 
     }
 

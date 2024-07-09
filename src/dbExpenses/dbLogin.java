@@ -24,6 +24,8 @@ public class dbLogin extends JFrame {
     JButton resetButton = new JButton("RESET");
     JCheckBox showPassword = new JCheckBox("Show Password");
 
+
+
     public dbLogin() {
 
         // Create fonts required for the login screen.
@@ -141,6 +143,7 @@ public class dbLogin extends JFrame {
     public static void main() {
         //Main method to initialise the program.
         ScreenUtils.openLoginScreen();
+
 
     }
 }

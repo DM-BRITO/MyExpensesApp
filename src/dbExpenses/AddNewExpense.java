@@ -170,7 +170,6 @@ public class AddNewExpense extends JFrame {
 
     }
 
-
     public void buildNewUserScreen(){
 
         //Adding labels to the container

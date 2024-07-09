@@ -135,7 +135,8 @@ public class HomeScreen extends JFrame {
                     ScreenUtils.openCreateNewExpense(loggedInUsername, getMemberSince, rt_isAdmin);
                     homeScreen.dispose();
                 } else if ("View Expenses".equals(hb.getActionCommand())) {
-                    // Handle "View Expenses" action
+                    ScreenUtils.viewExpenses(loggedInUsername, getMemberSince, rt_isAdmin);
+                    homeScreen.dispose();
                 } else if ("Account".equals(hb.getActionCommand())) {
                     // Handle "Account" action
                 } else if ("Logout".equals(hb.getActionCommand())) {
