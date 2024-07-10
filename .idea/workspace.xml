@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="View Expense Screen Completed!&#10;&#10;- You can now add expenses &amp; view expenses! &#10;- All warnings cleared&#10;&#10;Next Up:&#10;We are onto the last two features before completing version 1! So finally we are going to complete the Account page and the &quot;Amount spent this week&quot; on the front home screen which refreshes every time you open the screen.">
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+    <list default="true" id="77fc3af4-ade4-463a-aefd-9d4389b764e4" name="Changes" comment="All Screens Complete!&#10;&#10;The Account screen is now complete. Had a few issues loading the data as part of the screenstart up so moved it to a button. I'll be taking another look at this when developing the web version.&#10;&#10;Now moving to the this week spent calculation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbExpenses/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/HomeScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbExpenses/dbLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbExpenses/dbLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbUtility/ScreenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbUtility/ScreenUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +127,7 @@
       <workItem from="1720442312514" duration="1391000" />
       <workItem from="1720443767671" duration="4951000" />
       <workItem from="1720508857576" duration="18125000" />
-      <workItem from="1720595254234" duration="9184000" />
+      <workItem from="1720595254234" duration="18347000" />
     </task>
     <task id="LOCAL-00001" summary="Developed the login screen, some ammendments to be done but its functional. connected to a local database running on mysql">
       <option name="closed" value="true" />
@@ -244,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720525962813</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="All Screens Complete!&#10;&#10;The Account screen is now complete. Had a few issues loading the data as part of the screenstart up so moved it to a button. I'll be taking another look at this when developing the web version.&#10;&#10;Now moving to the this week spent calculation.">
+      <option name="closed" value="true" />
+      <created>1720604710501</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720604710501</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +270,8 @@
     <MESSAGE value="New User Screen Complete!&#10;&#10;- Implemented rt_isAdmin (Fixed)&#10;- Reset button complete as was missed&#10;- Simplified some if statements&#10;&#10;Next up!&#10;- Add new expense screen" />
     <MESSAGE value="New Expense Screen Completed!&#10;&#10;- You can now add expenses! &#10;- Errors are all sorted with this newest version.&#10;- Database ERD complete, logging implemented with this version of the screen.&#10;&#10;&#10;Reminder:&#10;- This is a proof of concept project. Final designs will look very different.&#10;&#10;Next Up:&#10;The next feature will be the view of the database in app, once I've got that then its just the account screen where you can change the username, first name, last name and password." />
     <MESSAGE value="View Expense Screen Completed!&#10;&#10;- You can now add expenses &amp; view expenses! &#10;- All warnings cleared&#10;&#10;Next Up:&#10;We are onto the last two features before completing version 1! So finally we are going to complete the Account page and the &quot;Amount spent this week&quot; on the front home screen which refreshes every time you open the screen." />
-    <option name="LAST_COMMIT_MESSAGE" value="View Expense Screen Completed!&#10;&#10;- You can now add expenses &amp; view expenses! &#10;- All warnings cleared&#10;&#10;Next Up:&#10;We are onto the last two features before completing version 1! So finally we are going to complete the Account page and the &quot;Amount spent this week&quot; on the front home screen which refreshes every time you open the screen." />
+    <MESSAGE value="All Screens Complete!&#10;&#10;The Account screen is now complete. Had a few issues loading the data as part of the screenstart up so moved it to a button. I'll be taking another look at this when developing the web version.&#10;&#10;Now moving to the this week spent calculation." />
+    <option name="LAST_COMMIT_MESSAGE" value="All Screens Complete!&#10;&#10;The Account screen is now complete. Had a few issues loading the data as part of the screenstart up so moved it to a button. I'll be taking another look at this when developing the web version.&#10;&#10;Now moving to the this week spent calculation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,11 +1,17 @@
 package dbExpenses;
 
+import Notifications.Notification;
 import dbUtility.ScreenUtils;
+import org.jetbrains.annotations.TestOnly;
 
+import javax.annotation.processing.Generated;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class HomeScreen extends JFrame {
 
@@ -20,6 +26,7 @@ public class HomeScreen extends JFrame {
     JLabel loggedInAs = new JLabel("Currently logged in as", SwingConstants.RIGHT);
     JLabel welcomeLabel = new JLabel("Welcome to Your Expenses", SwingConstants.LEFT);
     JLabel thisWeekSpent = new JLabel("This week you've spent £", SwingConstants.LEFT);
+    String thisWeekSpentValue;
     JLabel memberSince = new JLabel("Member Since", SwingConstants.RIGHT);
     public static JLabel getMemberSince = new JLabel("", SwingConstants.RIGHT);
 
@@ -44,6 +51,32 @@ public class HomeScreen extends JFrame {
         account.addActionListener(hb);
         logout.addActionListener(hb);
 
+        getThisWeekSpent();
+
+
+    }
+
+    public  void getThisWeekSpent(){
+        String query = "select sum(amount_paid) as spentAmount from transactions where tran_date  >= NOW() - INTERVAL 7 DAY and username = ?";
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
+             PreparedStatement pstmt = con.prepareStatement(query)) {
+
+            pstmt.setString(1, loggedInUsername.getText());
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    thisWeekSpentValue = rs.getString("spentAmount");
+                    thisWeekSpent.setText("This week you've spent £" + thisWeekSpentValue);
+                }else {
+                    Notification.DataBaseNotificationNoRecordsFound();
+                }
+                con.close();
+            }
+            //If the database is not found display on the screen to signify database issue.
+        } catch (SQLException ex) {
+            Logger.getLogger(dbLogin.class.getName()).log(Level.SEVERE, null, ex);
+            Notification.DataBaseNotificationUnexpectedDownTime();
+        }
     }
 
     public void setLocationsAndSize(){

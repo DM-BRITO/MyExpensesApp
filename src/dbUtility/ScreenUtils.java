@@ -1,8 +1,12 @@
 package dbUtility;
 
+import Notifications.Notification;
 import dbExpenses.*;
 
 import javax.swing.*;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ScreenUtils {
 
@@ -103,6 +107,12 @@ public class ScreenUtils {
         viewAcc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         viewAcc.setResizable(false);
         viewAcc.setVisible(true);
+
+    }
+
+    public void getWeekly(){
+
+
 
     }
 }
