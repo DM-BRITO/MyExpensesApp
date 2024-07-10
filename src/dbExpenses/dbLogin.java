@@ -106,7 +106,6 @@ public class dbLogin extends JFrame {
         String query = "SELECT username, first_name, last_name, password, is_admin, YEAR(register_date) FROM users WHERE username = ?";
         try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/expenses", "root", "Legodudu16");
              PreparedStatement pstmt = con.prepareStatement(query)) {
-
             pstmt.setString(1, username);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
@@ -136,14 +135,10 @@ public class dbLogin extends JFrame {
             Logger.getLogger(dbLogin.class.getName()).log(Level.SEVERE, null, ex);
             successfulOrFail.setText("Database error");
         }
-
     }
-
 
     public static void main() {
         //Main method to initialise the program.
         ScreenUtils.openLoginScreen();
-
-
     }
 }

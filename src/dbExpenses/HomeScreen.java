@@ -30,7 +30,6 @@ public class HomeScreen extends JFrame {
     JButton viewExpenses = new JButton("View Expenses");
     JButton account = new JButton("Account");
 
-
     public HomeScreen() {
 
         setLayoutManager();
@@ -138,7 +137,8 @@ public class HomeScreen extends JFrame {
                     ScreenUtils.viewExpenses(loggedInUsername, getMemberSince, rt_isAdmin);
                     homeScreen.dispose();
                 } else if ("Account".equals(hb.getActionCommand())) {
-                    // Handle "Account" action
+                    ScreenUtils.Account(loggedInUsername, getMemberSince, rt_isAdmin);
+                    homeScreen.dispose();
                 } else if ("Logout".equals(hb.getActionCommand())) {
                     ScreenUtils.openLoginScreen();
                     homeScreen.dispose();

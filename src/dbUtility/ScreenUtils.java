@@ -91,4 +91,18 @@ public class ScreenUtils {
 
     }
 
+    public static void Account(JLabel loggedInUsername, JLabel getMemberSince, String rt_isAdmin){
+
+        Account viewAcc = new Account();
+        viewAcc.setTitle("My Expenses - Create New Expense");
+        Account.rt_username = loggedInUsername.getText();
+        Account.rt_memberDate = getMemberSince.getText();
+        Account.rt_isAdmin = rt_isAdmin;
+        viewAcc.setLocationRelativeTo(null);
+        viewAcc.setSize(1200,600);
+        viewAcc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        viewAcc.setResizable(false);
+        viewAcc.setVisible(true);
+
+    }
 }
